@@ -31,7 +31,8 @@ export default function DashboardLayout({ children }) {
                                 <span className="h-1.5 w-1.5 rounded-full bg-white/40 group-hover:bg-blue-400 transition" />
                                 Inicio Panel
                             </Link>
-
+                            
+                            {/*
                             <Link
                                 href="/dashboard/pedidosCompras"
                                 className="group flex items-center gap-3 rounded-xl px-3 py-2 text-[13px] font-medium text-white hover:bg-blue-400/15 transition"
@@ -39,6 +40,7 @@ export default function DashboardLayout({ children }) {
                                 <span className="h-1.5 w-1.5 rounded-full bg-white/40 group-hover:bg-blue-400 transition" />
                                 Compras en Linea
                             </Link>
+                            */}
 
                             {/*
                             <Link

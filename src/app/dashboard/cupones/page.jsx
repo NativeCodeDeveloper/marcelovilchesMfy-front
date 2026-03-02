@@ -398,7 +398,7 @@ export default function Cupones() {
                         "Para desactivar un cupón, únicamente debe eliminarlo, y este dejará de estar activo de manera inmediata."} />
                 </div>
                 <div className="max-w-7xl mx-auto mb-7">
-                    <h1 className="text-3xl font-semibold text-slate-900">Sistema de Gestión de Cupones</h1>
+                    <h1 className="text-3xl font-semibold text-slate-900">Sistema de Gestión de cobros por Consulta</h1>
                     <div className="h-px w-full bg-slate-200 mt-4"></div>
                 </div>
 
@@ -413,7 +413,7 @@ export default function Cupones() {
                                     </svg>
                                 </div>
                                 <h2 className="text-base font-semibold text-slate-900">
-                                    Crear Cupón
+                                    Crear nuevo Cobro
                                 </h2>
                                 <br />
                             </div>
@@ -479,16 +479,16 @@ export default function Cupones() {
                                     </svg>
                                 </div>
                                 <h2 className="text-base font-semibold text-slate-900">
-                                    Cupones Activos
+                                    Cobros Activos
                                 </h2>
                             </div>
 
                             <div>
                                 <Table className="text-xs">
-                                    <TableCaption className="text-xs text-slate-500">Listado de cupones</TableCaption>
+                                    <TableCaption className="text-xs text-slate-500">Listado de sus Cobros</TableCaption>
                                     <TableHeader>
                                         <TableRow>
-                                            <TableHead className="text-xs text-slate-600">ID Cupon</TableHead>
+                                            <TableHead className="text-xs text-slate-600">ID Cobro</TableHead>
                                             <TableHead className="text-xs text-slate-600">Titulo</TableHead>
                                             <TableHead className="text-xs text-slate-600">Objetivo</TableHead>
                                             <TableHead className="text-xs text-slate-600">Codigo</TableHead>
