@@ -40,6 +40,7 @@ export default function DashboardLayout({ children }) {
                                 Compras en Linea
                             </Link>
 
+                            {/*
                             <Link
                                 href="/dashboard/ingresoProductos"
                                 className="group flex items-center gap-3 rounded-xl px-3 py-2 text-[13px] font-medium text-white hover:bg-blue-400/15 transition"
@@ -47,7 +48,7 @@ export default function DashboardLayout({ children }) {
                                 <span className="h-1.5 w-1.5 rounded-full bg-white/40 group-hover:bg-blue-400 transition" />
                                 Productos / Servicios
                             </Link>
-
+                            */}
 
 
                             <Link
@@ -55,7 +56,7 @@ export default function DashboardLayout({ children }) {
                                 className="group flex items-center gap-3 rounded-xl px-3 py-2 text-[13px] font-medium text-white hover:bg-blue-400/15 transition"
                             >
                                 <span className="h-1.5 w-1.5 rounded-full bg-white/40 group-hover:bg-blue-400 transition" />
-                                Cupones Descuentos
+                                Cobro por Consulta
                             </Link>
 
                             <Link
@@ -85,6 +86,7 @@ export default function DashboardLayout({ children }) {
                                 Estado de Reservaciones
                             </Link>
 
+                            {/*
                             <Link
                                 href="/dashboard/categoriasProductos"
                                 className="group flex items-center gap-3 rounded-xl px-3 py-2 text-[13px] font-medium text-white hover:bg-blue-400/15 transition"
@@ -92,6 +94,7 @@ export default function DashboardLayout({ children }) {
                                 <span className="h-1.5 w-1.5 rounded-full bg-white/40 group-hover:bg-blue-400 transition" />
                                 Categorías Productos/Servicios
                             </Link>
+                                */}
 
 
 
@@ -103,6 +106,13 @@ export default function DashboardLayout({ children }) {
                                 Ingreso Pacientes en sistema
                             </Link>
 
+                            <Link
+                                href="/dashboard/perfilProfesional"
+                                className="group flex items-center gap-3 rounded-xl px-3 py-2 text-[13px] font-medium text-white hover:bg-blue-400/15 transition"
+                            >
+                                <span className="h-1.5 w-1.5 rounded-full bg-white/40 group-hover:bg-blue-400 transition" />
+                                Perfil Profesional
+                            </Link>
 
 
                             <Link

@@ -154,8 +154,9 @@ export default function HomePage() {
                                 <h2 className={`${poppins.className} text-lg font-bold text-slate-900`}>Sobre mí</h2>
                             </div>
                             {data_perfil.map((perfil, index) => (
-                                <p key={index} className="text-slate-500 leading-7 whitespace-pre-line">
-                                    {perfil.descripcionDetallada}                                </p>
+                                <p key={index} className="text-slate-500 text-justify leading-7 whitespace-pre-line">
+                                    {perfil.descripcionDetallada}                                
+                                    </p>
                             ))}
                         </div>
 
