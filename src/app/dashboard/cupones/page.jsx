@@ -28,7 +28,7 @@ export default function Cupones() {
     async function actualizarCupon(nombreCupon, codigoVerificadorCupon, objetivoCupon, porcentajeDescuento, id_cupon) {
         try {
             if (!nombreCupon || !codigoVerificadorCupon || !objetivoCupon || !porcentajeDescuento || !id_cupon) {
-                return toast.error("Seleccione almenos un cupon");
+                return toast.error("Seleccione almenos un cobro");
 
             } else if (isNaN(porcentajeDescuento)) {
                 return toast.error("El porcentaje debe ser un valor numerico, no debe contener simbolos o letras");
@@ -61,15 +61,15 @@ export default function Cupones() {
                     setPorcentajeDescuento(0);
                     setId_cupon(0);
                     await listarTablaCupones();
-                    return toast.success("Datos del cupon actualizados!");
+                    return toast.success("Datos del cobro actualizados!");
 
                 } else {
-                    return toast.error("No se logro actualizar cupon, porfavor intente mas tarde!");
+                    return toast.error("No se logro actualizar cobro, porfavor intente mas tarde!");
                 }
             }
         } catch (error) {
             console.log(error)
-            return toast.error('Problema al insertar los cupones contacte a soporte de NativeCode el error es :' + error.message);
+            return toast.error('Problema al actualizar el cobro contacte a soporte de NativeCode el error es :' + error.message);
         }
     }
 
@@ -80,7 +80,7 @@ export default function Cupones() {
     async function seleccionarCupon(id_cupon) {
         try {
             if (!id_cupon) {
-                toast.error("Seleccione almenos un cupon");
+                toast.error("Seleccione almenos un cobro");
             }
             const res = await fetch(`${API}/cupon/seleccionarCuponesId`, {
                 method: "POST",
@@ -100,15 +100,15 @@ export default function Cupones() {
                 const respuestaBackend = await res.json();
                 if (respuestaBackend) {
                     setDataCuponSeleccionado(respuestaBackend);
-                    return toast.success("Cupon seleccionado!");
+                    return toast.success("Cobro seleccionado!");
 
                 } else {
-                    return toast.error("No se logro cargargar el cupon elegido. Contacte a soporte de NativeCode");
+                    return toast.error("No se logro cargar el cobro elegido. Contacte a soporte de NativeCode");
                 }
             }
         } catch (error) {
             console.log(error)
-            return toast.error('Problema al insertar los cupones contacte a soporte de NativeCode el error es :' + error.message);
+            return toast.error('Problema al cargar el cobro contacte a soporte de NativeCode el error es :' + error.message);
         }
     }
 
@@ -135,7 +135,7 @@ export default function Cupones() {
         try {
 
             if (!id_cupon) {
-                toast.error("Seleccione almenos un cupon");
+                toast.error("Seleccione almenos un cobro");
             }
             const res = await fetch(`${API}/cupon/eliminarCupon`, {
                 method: "POST",
@@ -155,14 +155,14 @@ export default function Cupones() {
                 const respuestaBackend = await res.json();
                 if (respuestaBackend.message === true) {
                     await listarTablaCupones();
-                    return toast.success("Se ha eliminado el cupon con exito!");
+                    return toast.success("Se ha eliminado el cobro con exito!");
                 } else {
-                    return toast.error("Ha ocurrido un problema con la eliminacion del cupon porfavor intente mas tarde.");
+                    return toast.error("Ha ocurrido un problema con la eliminacion del cobro porfavor intente mas tarde.");
                 }
             }
         } catch (error) {
             console.log(error)
-            return toast.error('Problema al insertar los cupones contacte a soporte de NativeCode el error es :' + error.message);
+            return toast.error('Problema al eliminar el cobro contacte a soporte de NativeCode el error es :' + error.message);
         }
     }
 
@@ -204,15 +204,15 @@ export default function Cupones() {
                 const respuestaBackend = await res.json();
                 if (respuestaBackend.message === true) {
                     await listarTablaCupones();
-                    return toast.success("Se ha insertado un nuevo cupon de descuentos");
+                    return toast.success("Se ha insertado un nuevo cobro con exito!");
                 } else {
-                    return toast.error("Ha ocurrido un problema con la insercion  del cupon porfavor intente mas tarde.");
+                    return toast.error("Ha ocurrido un problema con la insercion del cobro porfavor intente mas tarde.");
 
                 }
             }
         } catch (error) {
             console.log(error)
-            return toast.error('Problema al insertar los cupones contacte a soporte de NativeCode el error es :' + error.message);
+            return toast.error('Problema al insertar el cobro contacte a soporte de NativeCode el error es :' + error.message);
         }
     }
 
@@ -233,7 +233,7 @@ export default function Cupones() {
             }
 
         } catch (error) {
-            return toast.error('Problema al listar los cupones contacte a soporte de NativeCode el error es :' + error.message);
+            return toast.error('Problema al listar los cobros contacte a soporte de NativeCode el error es :' + error.message);
         }
     }
 
@@ -280,7 +280,7 @@ export default function Cupones() {
                                 <br />
                             </div>
                             <div className="flex items-center gap-3">
-                                <label className="text-[11px] uppercase tracking-wide text-sky-800 font-semibold">ID cupón</label>
+                                <label className="text-[11px] uppercase tracking-wide text-sky-800 font-semibold">ID cobro</label>
                                 <span className="text-xs font-semibold text-slate-700 border border-slate-200 bg-slate-100 px-2.5 py-1 rounded-lg">{mostrarIdSeleccionado(id_cupon)}</span>
                             </div>
                             <div className="space-y-3 mt-4">
@@ -391,11 +391,11 @@ export default function Cupones() {
                 {/* Header con diseño premium */}
 
                 <div className='flex justify-end mr-15'>
-                    <InfoButton informacion={"En este apartado, usted podrá crear cupones de descuento para que sus clientes obtengan rebajas en los productos o servicios ofrecidos. Estos cupones no son individuales ni se desactivan automáticamente al ser utilizados, por lo que deben desactivarse de forma manual cuando usted lo estime conveniente.\n" +
+                    <InfoButton informacion={"En este apartado, usted podrá crear cobros por consulta para que sus clientes realicen el pago de los servicios ofrecidos. Estos cobros no son individuales ni se desactivan automáticamente al ser utilizados, por lo que deben desactivarse de forma manual cuando usted lo estime conveniente.\n" +
                         "\n" +
-                        "En el último campo del formulario, usted puede indicar el porcentaje de descuento que se aplicará al producto. Este valor solo puede ingresarse como un número entero entre 1 y 100; no se permiten letras ni caracteres especiales.\n" +
+                        "En el último campo del formulario, usted puede indicar el porcentaje de descuento que se aplicará al cobro. Este valor solo puede ingresarse como un número entero entre 1 y 100; no se permiten letras ni caracteres especiales.\n" +
                         "\n" +
-                        "Para desactivar un cupón, únicamente debe eliminarlo, y este dejará de estar activo de manera inmediata."} />
+                        "Para desactivar un cobro, únicamente debe eliminarlo, y este dejará de estar activo de manera inmediata."} />
                 </div>
                 <div className="max-w-7xl mx-auto mb-7">
                     <h1 className="text-3xl font-semibold text-slate-900">Sistema de Gestión de cobros por Consulta</h1>
@@ -418,27 +418,27 @@ export default function Cupones() {
                                 <br />
                             </div>
                             <div className="flex items-center gap-3">
-                                <label className="text-[11px] uppercase tracking-wide text-sky-800 font-semibold">ID cupón seleccionado</label>
+                                <label className="text-[11px] uppercase tracking-wide text-sky-800 font-semibold">ID cobro seleccionado</label>
                                 <span className="text-xs font-semibold text-slate-700 border border-slate-200 bg-slate-100 px-2.5 py-1 rounded-lg">{mostrarIdSeleccionado(id_cupon)}</span>
                             </div>
                             <div className="space-y-3 mt-4">
                                 <div>
                                     <ShadcnInput value={nombreCupon}
                                         onChange={(e) => setNombreCupon(e.target.value)}
-                                        placeholder={"Titulo del cupon.."} />
+                                        placeholder={"Titulo del cobro.."} />
                                 </div>
 
                                 <div>
                                     <ShadcnInput
                                         value={codigoVerificadorCupon}
                                         onChange={(e) => setCodigoVerificadorCupon(e.target.value)}
-                                        placeholder={"Codigo del cupon.."}
+                                        placeholder={"Codigo del cobro.."}
                                     />
                                 </div>
 
                                 <div>
                                     <Textarea className="min-h-[84px] resize-none border-slate-200 focus:border-slate-400 focus:ring-2 focus:ring-slate-200 rounded-lg"
-                                        placeholder="Descripción del cupón..."
+                                        placeholder="Descripción del cobro..."
                                         value={objetivoCupon}
                                         onChange={(e) => setObjetivoCupon(e.target.value)}
                                     />
